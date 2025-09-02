@@ -3,16 +3,16 @@ import cv2
 import pandas as pd
 from glob import glob
 
-# data/images klasörü
+
 img_dir = Path(__file__).parent / "data" / "images"
 
-# Çıktılar için outputs klasörü
+
 output_dir = Path(__file__).parent / "outputs"
 output_dir.mkdir(exist_ok=True)
 
 rows = []
 
-# Tüm jpg dosyalarını tara
+
 for fp in glob(str(img_dir / "*.jpg")):
     img_bgr = cv2.imread(fp)
     if img_bgr is None:
